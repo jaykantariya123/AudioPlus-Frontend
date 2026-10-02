@@ -2,7 +2,8 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-const server = 'http://localhost:5000'
+const server = import.meta.env.VITE_USER_URL;
+// 'http://localhost:5000'
 
 export interface User {
     userId: string,
@@ -62,6 +63,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     async function loginUser(email: string, password: string, navigate: (path: string) => void) {
         setBtnLoading(true);
         try {
+            console.log(server);
             const { data } = await axios.post(`${server}/api/v1/user/login`, {
                 email, password
             });

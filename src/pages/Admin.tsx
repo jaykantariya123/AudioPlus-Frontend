@@ -6,7 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 
-const server = import.meta.env.VITE_API_URL;
+const server = import.meta.env.VITE_ADMIN_URL;
 // "http://localhost:3000";
 
 const Admin = () => {

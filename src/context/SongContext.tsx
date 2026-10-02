@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 
-const server = "http://localhost:8000"
+const server = import.meta.env.VITE_SONG_URL;
+//"http://localhost:8000"
 
 export interface Song {
     id: string,
